@@ -1,0 +1,118 @@
+@use 'mixin' as m;
+
+
+
+.minpaku-mainvisual {
+    background-image: url("../img/yoyaku.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    margin-bottom: 80px;
+
+    .mainvisual-text {
+        text-align: center;
+        width: 100%;
+        font-size: 40px;
+        color: #faf8f4;
+        font-weight: bold;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+        @include m.tab {
+            font-size: 32px;
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+.rooms-lists {
+    margin-bottom: 120px;
+
+    .rooms-detail {
+        margin-bottom: 60px;
+
+        h3 {
+            text-align: center;
+            color: #333333;
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
+
+        .img-texts {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+
+            @include m.tab {
+                display: flex;
+                flex-direction: column;
+            }
+
+
+            img {
+                width: 45%;
+                object-fit: cover;
+            }
+
+            .detail-texts {
+
+
+                p {
+                    font-size: 16px;
+                    line-height: 32px;
+                    margin-bottom: 20px;
+
+                    @include m.tab {
+                        text-align: left;
+                    }
+                }
+
+                dl {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 100%;
+                    gap: 20px;
+
+                    @include m.tab {
+                        justify-content: center;
+                    }
+
+                    dt {
+                        width: 10%;
+                        background-color: #6C7156;
+                        color: #F8F5F0;
+                        border-radius: 10px;
+                        font-weight: bold;
+                        text-align: center;
+                    }
+
+                    dd {
+                        width: 80%;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.submit-wrapper {
+    text-align: center;
+}
+
+.yoyakupage {
+    margin-bottom: 60px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #CBBFAD;
+    font-family: sans-serif;
+    color: #faf8f4;
+    font-weight: bold;
+    border-radius: 100px;
+    width: 240px;
+    height: 60px;
+
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+
+}

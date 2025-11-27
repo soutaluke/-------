@@ -1,0 +1,108 @@
+@use 'mixin' as m;
+
+.blog-page {
+
+    margin-top: 214px;
+
+    .main-blog {
+        display: flex;
+        align-items: center;
+        gap: 80px;
+        height: 300px;
+        margin-bottom: 40px;
+
+        @include m.tab {
+            flex-direction: column;
+            gap: 40px;
+            margin-bottom: 80px;
+
+        }
+
+        img {
+            height: 100%;
+        }
+
+        h2 {
+            color: #4A3C2B;
+            font-size: 32px;
+        }
+    }
+
+    .blog-texts {
+        p {
+            font-size: 16px;
+            line-height: 32px;
+            padding-bottom: 100px;
+            border-bottom: 1px solid #DDD6C8;
+
+            @include m.tab {
+                margin-top: 40px;
+            }
+        }
+    }
+
+    .other-blogs {
+        h3 {
+            margin-block: 80px;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .blog-lists {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 80px;
+            margin-bottom: 80px;
+
+            @include m.tab {
+                grid-template-columns: repeat(1, 6fr);
+                text-align: center;
+            }
+
+            h4 {
+                color: #333333;
+                text-align: center;
+                font-size: 16px;
+            }
+
+            .blog-contents {
+                a {
+                    transition: all 0.8s;
+                }
+
+                a:hover {
+                    transform: scale(1.1);
+                    transition-duration: 0.8s;
+                }
+
+                img {
+                    padding-bottom: 48px;
+                    margin-bottom: 20px;
+                    border-bottom: 1px solid #DDD6C8;
+                }
+            }
+        }
+    }
+
+    .page-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-bottom: 80px;
+
+        button {
+            font-family: "Noto sans serif";
+            font-size: 24px;
+            font-weight: bold;
+            border: 1px solid #333;
+            color: #333;
+            padding: 12px 20px;
+        }
+
+        button:first-child {
+            background-color: #6C7156;
+            color: #faf8f4;
+        }
+
+    }
+}

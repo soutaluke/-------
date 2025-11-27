@@ -1,0 +1,108 @@
+@use 'mixin' as m;
+
+footer {
+    text-align: center;
+    background-color: #4b6043;
+    width: 100%;
+
+    h1,
+    a,
+    small {
+        color: #FAF8F4;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    /* h1はpositionを使わずに配置することができる */
+    h1 {
+        font-family: "Zen Antique Soft", serif;
+        text-align: left;
+        font-size: 32px;
+
+
+
+
+        a {
+            margin-top: 60px;
+            margin-left: 60px;
+            transition: all 0.5s;
+
+            @include m.tab {
+                margin-top: 60px;
+                margin-left: 3%;
+            }
+
+
+
+        }
+
+        a:hover {
+            opacity: 0.7;
+        }
+    }
+
+    .footer-lists {
+        display: flex;
+        justify-content: center;
+        margin-top: 240px;
+
+        @include m.tab {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        li:first-child {
+            position: relative;
+            padding-right: 48px;
+
+            /* liタグにborderつけることでpositionも疑似要素も使わずに線が引ける */
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                height: 48px;
+                border-right: 1px solid #FAF8F4
+            }
+        }
+
+        li {
+            padding-inline: 48px;
+
+            a {
+                font-weight: bold;
+                font-size: 24px;
+                transition: all 0.5s;
+            }
+
+            a:hover {
+                color: #C8D3BC;
+            }
+        }
+
+        li:last-child {
+            position: relative;
+            padding-left: 48px;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                height: 48px;
+                border-right: 1px solid #FAF8F4
+            }
+        }
+
+
+    }
+
+    /* もっとちいさくてOK */
+    small {
+        display: block;
+        padding-block: 160px 40px;
+        font-size: 16px;
+        font-weight: lighter;
+    }
+}
